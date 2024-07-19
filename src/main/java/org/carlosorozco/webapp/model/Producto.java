@@ -1,4 +1,3 @@
-
 package org.carlosorozco.webapp.model;
 
 import jakarta.persistence.Column;
@@ -8,23 +7,30 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Table (name = "Productos")
+@Table(name = "Productos")
 @Entity
 public class Producto {
     
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productoId;
     private String nombreProducto;
     private String marcaProducto;
     private String descripcionProducto;
-    @Column (name = "precio")
-    private Double precioProducto;
+        @Column(name = "precio")
+    private double precioProducto;
 
     public Producto() {
     }
 
-    public Producto(int productoId, String nombreProducto, String marcaProducto, String descripcionProducto, Double precioProducto) {
+    public Producto(String nombreProducto, String marcaProducto, String descripcionProducto, double precioProducto) {
+        this.nombreProducto = nombreProducto;
+        this.marcaProducto = marcaProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.precioProducto = precioProducto;
+    }
+    
+    public Producto(int productoId, String nombreProducto, String marcaProducto, String descripcionProducto, double precioProducto) {
         this.productoId = productoId;
         this.nombreProducto = nombreProducto;
         this.marcaProducto = marcaProducto;
@@ -32,50 +38,43 @@ public class Producto {
         this.precioProducto = precioProducto;
     }
 
-    public Producto(String nombreProducto, String marcaProducto, String descripcionProducto, Double precioProducto) {
-        this.nombreProducto = nombreProducto;
-        this.marcaProducto = marcaProducto;
-        this.descripcionProducto = descripcionProducto;
-        this.precioProducto = precioProducto;
-    }
-
-    public int getProductoId() {
+    public long getProductoId() {
         return productoId;
-    }
-
-    public String getNombreProducto() {
-        return nombreProducto;
-    }
-
-    public String getMarcaProducto() {
-        return marcaProducto;
-    }
-
-    public String getDescripcionProducto() {
-        return descripcionProducto;
-    }
-
-    public Double getPrecioProducto() {
-        return precioProducto;
     }
 
     public void setProductoId(int productoId) {
         this.productoId = productoId;
     }
 
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
+    }
+
+    public String getMarcaProducto() {
+        return marcaProducto;
     }
 
     public void setMarcaProducto(String marcaProducto) {
         this.marcaProducto = marcaProducto;
     }
 
+    public String getDescripcionProducto() {
+        return descripcionProducto;
+    }
+
     public void setDescripcionProducto(String descripcionProducto) {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public void setPrecioProducto(Double precioProducto) {
+    public double getPrecioProducto() {
+        return precioProducto;
+    }
+
+    public void setPrecioProducto(double precioProducto) {
         this.precioProducto = precioProducto;
     }
 
@@ -84,13 +83,5 @@ public class Producto {
         return "Producto{" + "productoId=" + productoId + ", nombreProducto=" + nombreProducto + ", marcaProducto=" + marcaProducto + ", descripcionProducto=" + descripcionProducto + ", precioProducto=" + precioProducto + '}';
     }
     
-    
-
-    
-
-    
-    
-   
-   
     
 }

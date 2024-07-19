@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.carlosorozco.webapp</groupId>
-    <artifactId>SGBDProductos</artifactId>
+    <artifactId>ProductosIN5CM</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>SGBDProductosIN5CM</name>
+    <name>ProductosIN5CM</name>
     
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
@@ -65,5 +65,5 @@
             </plugin>
         </plugins>
     </build>
-
+                                                                                        
 </project>
